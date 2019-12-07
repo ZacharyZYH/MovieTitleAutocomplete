@@ -12,7 +12,13 @@
 
 .movieTitleAutocomplete-pill-container {
   float: left;
-  overflow: scroll;
+  overflow: auto;
   max-width: 50%;
   direction: rtl;
+  border-bottom-left-radius: 0.8rem;
+  border-top-left-radius: 0.8rem;
+}
+
+.movieTitleAutocomplete-pill-container::-webkit-scrollbar {
+  display: none;
 }
