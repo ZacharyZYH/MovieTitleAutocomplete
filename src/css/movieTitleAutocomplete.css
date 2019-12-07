@@ -1,0 +1,8 @@
+.movieTitleAutocomplete {
+  align-items: center;
+  border-radius: 1rem !important;
+  width: 500px;
+  height: 37px;
+  white-space: nowrap;
+  overflow: visible;
+}

@@ -1,0 +1,22 @@
+.pill {
+  height: 24px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 3px;
+  color: rgba(0, 0, 0, 0.87);
+  border: none;
+  cursor: default;
+  font-size: 0.8125rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  white-space: nowrap;
+  /* justify-content: center;
+  text-decoration: none; */
+  background-color: #e0e0e0;
+  border-radius: 999em;
+}
+.pill-btn {
+  width: 15px;
+  padding: 1px;
+  background-color: inherit;
+  border: none;
+}

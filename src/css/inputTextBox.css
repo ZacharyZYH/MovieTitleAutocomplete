@@ -1,0 +1,17 @@
+.inputTextBox {
+  width: auto;
+  height: 28px;
+  line-height: 24px;
+  display: table-cell;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: inline-block;
+}
+.inputTextBox-text {
+  resize: none;
+  width: max-content;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  /* overflow: scroll; */
+}
