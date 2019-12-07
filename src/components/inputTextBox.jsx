@@ -21,10 +21,10 @@ class InputTextBox extends Component {
 
   handleChange = e => {
     this.setState({ text: e.target.value, movieList: [] });
-    if (this.timer) {
-      clearTimeout(this.timer);
+    if (this.inputTimer) {
+      clearTimeout(this.inputTimer);
     }
-    this.timer = setTimeout(() => {
+    this.inputTimer = setTimeout(() => {
       this.updateList();
     }, 500);
   };
@@ -32,6 +32,9 @@ class InputTextBox extends Component {
   handleSelect = movie => {
     this.clearInput();
     this.props.onSelect(movie);
+    setTimeout(() => {
+      this.textInput.focus();
+    }, 100);
   };
 
   handleFocus = () => {
@@ -54,6 +57,9 @@ class InputTextBox extends Component {
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           value={this.state.text}
+          ref={input => {
+            this.textInput = input;
+          }}
         />
         <DropdownList
           choices={this.props.movieList}
@@ -66,12 +72,6 @@ class InputTextBox extends Component {
 
   getListUrl = keyword =>
     "http://www.omdbapi.com/?s=" + keyword + "&apikey=" + apikey;
-
-  getDetailUrl = title =>
-    "http://www.omdbapi.com/?t=" +
-    title.replace(/\s/g, "-") +
-    "&apikey=" +
-    apikey;
 
   updateList = () => {
     let url = this.getListUrl(this.state.text);
@@ -87,25 +87,6 @@ class InputTextBox extends Component {
         }
         this.props.onMovieListChange(movieList);
       });
-  };
-
-  updateDetails = movieList => {
-    movieList = movieList.map(movie => {
-      let url = this.getDetailUrl(movie.Title);
-
-      fetch(url)
-        .then(response => {
-          return response.json();
-        })
-        .then(responseJson => {
-          let details = {};
-          if (responseJson.Response === "True") {
-            details = responseJson;
-          }
-          movie["details"] = details;
-          return movie;
-        });
-    });
   };
 }
 
