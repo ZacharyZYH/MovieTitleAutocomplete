@@ -26,8 +26,13 @@ class MovieTitleAutocomplete extends Component {
     let selectedMovies = this.state.selectedMovies.filter(
       movie => movie["imdbID"] !== selectedMovie["imdbID"]
     );
-    if (previousLen === selectedMovies.length && previousLen < 5) {
-      selectedMovies.push(selectedMovie);
+    if (previousLen === selectedMovies.length) {
+      if (previousLen >= 5) {
+        alert("You cannot add more than 5 movies.");
+      } else {
+        // selectedMovies.push(selectedMovie);
+        selectedMovies = [selectedMovie].concat(selectedMovies);
+      }
     }
     this.setState({ selectedMovies, movieList: [] });
   };
@@ -36,14 +41,16 @@ class MovieTitleAutocomplete extends Component {
     return (
       <div>
         <div id="1" cols="30" rows="1" className="movieTitleAutocomplete">
-          {this.state.selectedMovies.map(movie => (
-            <Pill
-              key={movie["imdbID"]}
-              id={movie["imdbID"]}
-              text={movie["Title"]}
-              onDelete={this.handlePillDelete}
-            />
-          ))}
+          <div className="movieTitleAutocomplete-pill-container">
+            {this.state.selectedMovies.map(movie => (
+              <Pill
+                key={movie["imdbID"]}
+                id={movie["imdbID"]}
+                text={movie["Title"]}
+                onDelete={this.handlePillDelete}
+              />
+            ))}
+          </div>
           <InputTextBox
             onMovieListChange={this.handleMovieListUpdate}
             movieList={this.state.movieList}
