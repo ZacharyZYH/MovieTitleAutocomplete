@@ -8,6 +8,9 @@
   display: inline-block;
 }
 .inputTextBox-text {
+  font-size: 0.8125rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
   resize: none;
   width: 300px;
   outline: none;

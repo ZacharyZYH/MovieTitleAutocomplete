@@ -2,17 +2,19 @@
   height: 24px;
   display: inline-block;
   vertical-align: top;
-  margin: 3px;
+  margin: 0.25rem;
+  padding: 0.25em 0.4em;
   color: rgba(0, 0, 0, 0.87);
   border: none;
   cursor: default;
   font-size: 0.8125rem;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
   white-space: nowrap;
-  /* justify-content: center;
-  text-decoration: none; */
-  background-color: #e0e0e0;
+  background-color: #eeeeee;
   border-radius: 999em;
+  line-height: 1;
+  text-align: center;
 }
 .pill-btn {
   width: 15px;

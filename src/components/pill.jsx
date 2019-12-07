@@ -4,7 +4,7 @@ class Pill extends Component {
   state = {};
   render() {
     return (
-      <div className="badge badge-info m-1 pill">
+      <div className="pill">
         {this.props.text}
         <button
           className="pill-btn"
