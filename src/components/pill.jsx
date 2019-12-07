@@ -11,7 +11,6 @@ class Pill extends Component {
           onClick={() => this.props.onDelete(this.props.id)}
         >
           <svg
-            class="MuiSvgIcon-root MuiChip-deleteIcon"
             focusable="false"
             viewBox="0 0 24 24"
             aria-hidden="true"

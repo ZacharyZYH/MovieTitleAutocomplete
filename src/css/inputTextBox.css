@@ -1,5 +1,5 @@
 .inputTextBox {
-  width: auto;
+  width: 500px;
   height: 28px;
   line-height: 24px;
   display: table-cell;
@@ -9,7 +9,7 @@
 }
 .inputTextBox-text {
   resize: none;
-  width: max-content;
+  width: 300px;
   outline: none;
   border: none;
   white-space: nowrap;

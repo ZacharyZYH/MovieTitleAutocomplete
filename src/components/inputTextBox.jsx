@@ -7,7 +7,7 @@ const apikey = "bc10700";
 class InputTextBox extends Component {
   constructor() {
     super();
-    this.state = { text: "jo" };
+    this.state = { text: "" };
   }
 
   state = {

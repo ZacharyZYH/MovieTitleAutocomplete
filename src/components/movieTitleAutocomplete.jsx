@@ -35,13 +35,7 @@ class MovieTitleAutocomplete extends Component {
   render() {
     return (
       <div>
-        <div
-          name="nnnn"
-          id="1"
-          cols="30"
-          rows="1"
-          className="movieTitleAutocomplete m-2 border"
-        >
+        <div id="1" cols="30" rows="1" className="movieTitleAutocomplete">
           {this.state.selectedMovies.map(movie => (
             <Pill
               key={movie["imdbID"]}
