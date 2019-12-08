@@ -1,21 +1,17 @@
 .pill {
   height: 24px;
   display: inline-block;
-  vertical-align: top;
   margin: 0.25rem;
   padding: 0.25em 0.4em;
-  color: rgba(0, 0, 0, 0.87);
-  border: none;
   cursor: default;
   font-size: 0.8125rem;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 400;
-  white-space: nowrap;
   background-color: #eeeeee;
   border-radius: 999em;
-  line-height: 1;
   text-align: center;
+  box-sizing: border-box;
 }
+
 .pill-btn {
   width: 15px;
   padding: 1px;

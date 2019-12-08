@@ -1,15 +1,10 @@
 import React, { Component } from "react";
-import "../css/inputTextBox.css";
 import DropdownList from "./dropdownList";
+import "../css/inputTextBox.css";
 
 const apikey = "bc10700";
 
 class InputTextBox extends Component {
-  constructor() {
-    super();
-    this.state = { text: "" };
-  }
-
   state = {
     text: "",
     focus: 0
@@ -45,31 +40,6 @@ class InputTextBox extends Component {
     this.setState({ focus: 0 });
   };
 
-  render() {
-    return (
-      <div className="inputTextBox">
-        <input
-          type="text"
-          className="inputTextBox-text"
-          cols="30"
-          rows="1"
-          onChange={this.handleChange}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
-          value={this.state.text}
-          ref={input => {
-            this.textInput = input;
-          }}
-        />
-        <DropdownList
-          choices={this.props.movieList}
-          onSelect={this.handleSelect}
-          displayable={this.state.focus}
-        ></DropdownList>
-      </div>
-    );
-  }
-
   getListUrl = keyword =>
     "http://www.omdbapi.com/?s=" + keyword + "&apikey=" + apikey;
 
@@ -88,6 +58,29 @@ class InputTextBox extends Component {
         this.props.onMovieListChange(movieList);
       });
   };
+
+  render() {
+    return (
+      <div className="inputTextBox">
+        <input
+          type="text"
+          className="inputTextBox-text"
+          onChange={this.handleChange}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
+          value={this.state.text}
+          ref={input => {
+            this.textInput = input;
+          }}
+        />
+        <DropdownList
+          choices={this.props.movieList}
+          onSelect={this.handleSelect}
+          displayable={this.state.focus}
+        ></DropdownList>
+      </div>
+    );
+  }
 }
 
 export default InputTextBox;
